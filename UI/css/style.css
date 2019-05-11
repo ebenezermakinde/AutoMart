@@ -266,6 +266,29 @@ h1, h2, h3, h4, h5, h6 {
   grid-gap: 1rem;
 }
 
+/* Register Styling */
+.register-here {
+  margin: 7rem auto;
+  max-width: 50rem;
+  padding: 0.5rem;
+} 
+
+.page-container aside .list li {
+  margin: .9rem 0;
+}
+
+.page-container aside .list li i {
+  color: var(--secondary-color);
+}
+
+.page-container .form-wrapper p a {
+  color: var(--primary-color);
+}
+
+.page-container .form-wrapper p a:hover {
+  opacity: 0.8;
+}
+
 /* Footer */
 #main-footer {
   background: var(--dark-color);

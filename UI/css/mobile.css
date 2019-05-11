@@ -35,4 +35,20 @@
     border-bottom: 1px dotted #444;
     padding-bottom: 1rem;
   }
+
+  .register-here {
+    margin: 0;
+  } 
+
+  .page-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .form-pair {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    text-align: left;
+  }
+
 }
