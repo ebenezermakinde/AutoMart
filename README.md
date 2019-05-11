@@ -1,7 +1,5 @@
-# AutoMart
-Auto Mart is an online marketplace for automobiles of diverse makes, model or body type. With Auto Mart, users can sell their cars or buy from trusted dealerships or private sellers.
-
 # :star: AutoMart :red_car: :minibus:
+Auto Mart is an online marketplace for automobiles of diverse makes, model or body type. With Auto Mart, users can sell their cars or buy from trusted dealerships or private sellers.
 
 ## Project Overview
 Auto Mart is an online marketplace for automobiles of diverse makes, model or body type. With Auto Mart, users can sell their cars or buy from trusted dealerships or private sellers.
@@ -31,4 +29,4 @@ Auto Mart is an online marketplace for automobiles of diverse makes, model or bo
 
 ### Pivotal Tracker
 
-Project is currently being managed with Pivotal Tracker, a project management tool. You can find the stories on the [AutoMart Pivotal Tracker Board](https://www.pivotaltracker.com/n/projects/2346050)
+Project is currently being managed with Pivotal Tracker, a project management tool. You can find the stories on the [AutoMart Pivotal Tracker Board](https://www.pivotaltracker.com/n/projects/2346876)

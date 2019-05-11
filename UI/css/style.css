@@ -176,6 +176,7 @@ h1, h2, h3, h4, h5, h6 {
   outline: none;
 }
 
+
 /* Nav-bar Styling */
 #main-nav {
   background: #fff;
@@ -273,6 +274,18 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0.5rem;
 } 
 
+/* Login Styling */
+.login-here {
+  margin: 4rem auto;
+  max-width: 30rem;
+  padding: 0.5rem;
+} 
+
+.form-wrapper form #reset-password-div {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
 .page-container aside .list li {
   margin: .9rem 0;
 }
@@ -281,7 +294,9 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--secondary-color);
 }
 
-.page-container .form-wrapper p a {
+.page-container .form-wrapper p a,
+.form-wrapper form #reset-password-div a,
+.login-here .form-wrapper p a {
   color: var(--primary-color);
 }
 
