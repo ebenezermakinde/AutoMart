@@ -162,7 +162,9 @@ h1, h2, h3, h4, h5, h6 {
   grid-gap: 2rem;
 }
 
-.form-wrapper {
+.form-wrapper,
+.post-car .form-wrap #my-ads,
+.user-ads .ads-area {
   background: #fff;
   padding: 2rem 1rem;
   color: #333;
@@ -176,9 +178,53 @@ h1, h2, h3, h4, h5, h6 {
   outline: none;
 }
 
+.edit {
+  color: blue;
+}
+
+.save {
+  color: green;
+}
+
+.user-img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 4;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-header {
+  background: var(--primary-color);
+  padding: 0.5rem;
+  color: #fff;
+}
+
+.modal-hearder h2 {
+  margin: 0;
+}
+
+/* User Navbar Styling */
+#user-nav .container {
+  display: grid;
+  grid-template-columns: 4fr 5fr 1fr;
+  padding: 1rem;
+  align-items: center;
+}
 
 /* Nav-bar Styling */
-#main-nav {
+#main-nav,
+#user-nav {
   background: #fff;
   position: sticky;
   top: 0;
@@ -192,31 +238,37 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
 }
 
-#main-nav .logo {
+#main-nav .logo,
+#user-nav .logo {
   width: 180px;
 }
 
-#main-nav ul {
+#main-nav ul,
+#user-nav ul {
   justify-self: end;
   display: flex;
 }
 
-#main-nav ul li a {
+#main-nav ul li a,
+#user-nav ul li a {
   padding: 0.75rem;
   font-weight: bold;
 }
 
-#main-nav ul li a.current {
+#main-nav ul li a.current,
+#user-nav ul li a.current {
   background: var(--primary-color);
   color: #fff;
 }
 
-#main-nav ul li a:hover {
+#main-nav ul li a:hover,
+#user-nav ul li a:hover {
   background: var(--light-color);
   color: #333;
 }
 
-#main-nav .social {
+#main-nav .social,
+#user-nav .social {
   justify-self: center;
 }
 
@@ -302,6 +354,60 @@ h1, h2, h3, h4, h5, h6 {
 
 .page-container .form-wrapper p a:hover {
   opacity: 0.8;
+}
+
+/* Post Car */
+.post-car .user-container {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 1rem;
+}
+
+/* user ads */
+.user-ads{
+  padding: 0.3rem 0.4rem;
+}
+
+.ad-details {
+  border: 1px solid #ddd;
+  padding: 0.2rem 0.5rem;
+  margin: 0.5rem 0;
+  border-radius: 1rem;
+}
+
+.user-ads .ad-details .ad-items {
+  display:flex; 
+  justify-content: space-between;
+}
+
+.price-content {
+  background-color: #f4f4f4;
+  margin: 20% auto;
+  max-width: 20rem;
+  box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17);
+  animation-name:priceModal;
+  animation-duration: 2s;
+}
+
+@keyframes priceModal {
+  fom{opacity: 0;}
+  to{opacity: 1;}
+}
+
+.price-body {
+  padding: 10px 20px;
+}
+
+#closeBtn {
+  color: #fff;
+  float: right;
+  font-size: 30px;
+}
+
+#closeBtn:hover, #closeBtn:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /* Footer */
