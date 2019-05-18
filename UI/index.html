@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Lato|Staatliches" rel="stylesheet">
   <!-- Favicon -->
-  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="img/favicon_2.ico" type="image/x-icon">
   <!-- Style links -->
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" media="screen and (max-width: 768px)" href="css/mobile.css">
@@ -18,82 +18,163 @@
 </head>
 
 <body>
-  <!-- Navigation -->
+  <!-- Navigation bar-->
   <nav id="main-nav">
-    <div class="container">
-      <img src="img/logo.png" alt="AutoMart" class="logo">
-      <div class="social">
-        <a href="http://facebook.com" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
-        <a href="http://twitter.com" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
-        <a href="http://instagram.com" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
-        <a href="http://youtube.com" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+      <div class="container">
+        <img src="img/logo.png" alt="AutoMart" class="logo">
+        <div class="social">
+          <a href="http://facebook.com" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+          <a href="http://twitter.com" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+          <a href="http://instagram.com" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+          <a href="http://youtube.com" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
+        </div>
+        <ul>
+          <li><a class="current" href="index.html">Home</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
       </div>
-      <ul>
-        <li><a class="current" href="index.html">Home</a></li>
-        <li><a href="register.html">Register</a></li>
-        <li><a href="login.html">Login</a></li>
-      </ul>
-    </div>
-  </nav>
+    </nav>
 
   <!-- Showcase -->
-  <header id="showcase">
+  <div id="showcase">
     <div class="container">
-      <div class="showcase-container">
-        <div class="showcase-content">
-          <h1>Great car offers, dead simple</h1>
-          <p>Find your next car from the comfort of home, without traipsing around dealers nor haggling on price. Just
-            tell us the car you want and get great offers from approved dealers on new and used cars.</p>
-        </div>
+      <h1 class="text-center">Start The Search to your dream car</h1>
+      <!-- Search: Form -->
+      <div class="car-search">
+        <form action="">
+          <div class="form-pair">
+            <div class="form-pair-item">
+              <label for="manufacturer">Manufacturer</label>
+              <select name="makes" id="makes" class="input-group" required>
+                <option value="">Please Select</option>
+                <option value="toyota">Toyota</option>
+                <option value="nissan">Nissan</option>
+                <option value="mercedez-benz">Mercedez-Benz</option>
+                <option value="honda">Honda</option>
+                <option value="bmw">BMW</option>
+                <option value="land Rover">Land Rover</option>
+                <option value="volkswagen">Volkswagen</option>
+                <option value="audi">Audi</option>
+              </select>
+            </div>
+            <div class="form-pair-item">
+              <label for="model">Model</label>
+              <select name="model" id="model" class="input-group" required>
+                <option value="">Please Select</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-pair">
+            <div class="form-pair-item">
+              <label for="state">Car State</label>
+              <select name="state" id="state" class="input-group" required>
+                <option value="">Please Select</option>
+                <option value="used">Used</option>
+                <option value="new">New</option>
+              </select>
+            </div>
+            <div class="form-pair-item">
+              <label for="price-range">Price Range</label>
+              <select name="price-range" id="price-range" class="input-group" required>
+                <option value="">Please Select</option>
+                <option value="1">&#8358 500,000 - &#8358 1,000,000</option>
+                <option value="2">&#8358 1,000,000 - &#8358 2,500,000</option>
+                <option value="3">&#8358 3,000,000 - &#8358 3,500,000</option>
+                <option value="4">&#8358 4,000,000 - &#8358 4,500,000</option>
+                <option value="5">&#8358 5,000,000 - &#8358 5,500,000</option>
+                <option value="6">&#8358 6,000,000 - &#8358 6,500,000</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group py-1">
+            <button id="submit" class="btn btn-primary">Search</button>
+          </div>
+        </form>
       </div>
     </div>
-  </header>
+  </div>
 
   <!-- Featured Cars -->
   <section id="featured-cars" class="py-2">
     <div class="container">
       <h2>Featured Cars</h2>
       <div class="articles-container">
-        <article class="card">
-          <img src="img/cars/car2.jpg" alt="Audi-A4">
-          <div class="card-flex-item ">
-            <div class="category category-offer">Best Offer</div>
-            <div><small>Price: &#8358 13,500.00</small></div>
-            <div class="category category-available">Available</div>
+        <article class="card" id="car-item1">
+          <div>
+            <div>
+              <img src="img/cars/car2.jpg" class="f-img" alt="Audi-A4">
+            </div>
+            <p class="model">Audi A4</p>
+            <p class="manufacturer hidden-field">Audi</p>
+            <p class="bodyType hidden-field">Car</p>
+            <p class="trans hidden-field">Manual</p>
+            <p class="carState hidden-field">New</p>
+            <hr>
+            <p class="price">&#8358 3,500,000.10</p>
+            <div class="f-edit">
+              <button class="btn btn-primary">View Details</button>
+              <button class="btn btn-primary">Buy Now</button>
+            </div>
           </div>
-          <hr>
-          <p>Audi A4 2018 model car with all the necessary papers. Clean interior as well</p>
         </article>
-        <article class="card">
-          <img src="img/cars/suv.jpg" alt="Range rover">
-          <div class="card-flex-item">
-            <div class="category category-offer">Best Offer</div>
-            <div><small>Price: &#8358 13,500.00</small></div>
-            <div class="category category-available">Available</div>
+        <article class="card" id="car-item2">
+          <div>
+            <div>
+              <img src="img/cars/suv.jpg" class="f-img" alt="Range rover">
+            </div>
+            <p class="model">Range Rover</p>
+            <p class="manufacturer hidden-field">Land Rover</p>
+            <p class="bodyType hidden-field">SUV</p>
+            <p class="trans hidden-field">Automatic</p>
+            <p class="carState hidden-field">Old</p>
+            <hr>
+            <p class="price">&#8358 6,000,000</p>
+            <div class="f-edit">
+              <button class="btn btn-primary">View Details</button>
+              <button class="btn btn-primary">Buy Now</button>
+            </div>
           </div>
-          <hr>
-          <p>Range Rover Sport 2018 model used car with all the necessary papers. Clean interior as well</p>
         </article>
-        <article class="card">
-          <img src="img/cars/car2.jpg" alt="Audi-A4">
-          <div class="card-flex-item ">
-            <div class="category category-test">Test Drive Offer</div>
-            <div><small>Price: &#8358 13,500.00</small></div>
-            <div class="category category-available">Available</div>
+        <article class="card" id="car-item3">
+          <div>
+            <div>
+              <img src="img/cars/car2.jpg" class="f-img" alt="Audi-A4">
+            </div>
+            <p class="model">Audi A4</p>
+            <p class="manufacturer hidden-field">Audi</p>
+            <p class="bodyType hidden-field">Car</p>
+            <p class="trans hidden-field">Manual</p>
+            <p class="carState hidden-field">New</p>
+            <hr>
+            <p class="price">&#8358 4,500,200.90</p>
+            <div class="f-edit">
+              <button class="btn btn-primary">View Details</button>
+              <button class="btn btn-primary">Buy Now</button>
+            </div>
           </div>
-          <hr>
-          <p>Audi A4 2018 model car with all the necessary papers. Clean interior as well</p>
         </article>
-        <article class="card">
-          <img src="img/cars/suv.jpg" alt="Range rover">
-          <div class="card-flex-item ">
-            <div class="category category-test">Test Drive Offer</div>
-            <div><small>Price: &#8358 13,500.00</small></div>
-            <div class="category category-available">Available</div>
+        <article class="card" id="car-item4">
+          <div>
+            <div>
+              <img src="img/cars/suv.jpg" class="f-img" alt="Range rover">
+            </div>
+            <p class="model">Range Rover</p>
+            <p class="manufacturer hidden-field">Land Rover</p>
+            <p class="bodyType hidden-field">SUV</p>
+            <p class="trans hidden-field">Automatic</p>
+            <p class="carState hidden-field">New</p>
+            <hr>
+            <p class="price">&#8358 3,509,000.45</p>
+            <div class="f-edit">
+              <button class="btn btn-primary">View Details</button>
+              <button class="btn btn-primary">Buy Now</button>
+            </div>
           </div>
-          <hr>
-          <p>Range Rover Sport 2018 model used car with all the necessary papers. Clean interior as well</p>
         </article>
+      </div>
+      <div class="load-more">
+          <button class="btn btn-primary">Load More Cars</button>
       </div>
     </div>
   </section>
@@ -102,7 +183,7 @@
   <footer id="main-footer" class="py-2">
     <div class="container footer-container">
       <div>
-        <img src="img/logo.png" alt="AutoMart">
+        <img src="img/logo.png" alt="NewsGrid">
         <p>AutoMart is a purely for profit company operating under the license XXX1234JJ in Nigeria.</p>
       </div>
       <div>
