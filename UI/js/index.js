@@ -63,8 +63,8 @@ makes.addEventListener('change', (event) => {
     const formImg = document.querySelector('.detail .f-img').src = src;  
     }
 
-// Function: Close button.
-function closeAD(){
+// Function: Close AD button.
+const closeAD = () => {
        
   document.querySelector('.viewDform').classList.add('close-modal');
 
@@ -77,3 +77,26 @@ function closeAD(){
   clearTimeout()
 })();
 }
+
+// Function: Flag a car
+const flagAD = (event) => {
+  let theTarget = event.target
+  let form = document.querySelector('.viewFlag').classList.add('viewForm')
+  document.querySelector('.viewDform').classList.remove('viewForm')
+  
+  }
+
+  // clode flag function
+  const closeFlagForm = () => {
+      
+      document.querySelector('.viewFlag').classList.add('close-modal');
+
+      setTimeout(()=>{
+          document.querySelector('.viewFlag').classList.remove('viewForm');
+          document.querySelector('.viewFlag').classList.remove('close-modal');
+      },1500)
+  
+      (function remInterval(){
+      clearTimeout()
+  })();
+  }
