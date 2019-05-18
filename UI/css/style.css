@@ -371,11 +371,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Modal: Flag Form */
-.viewFlag .close-order{
+.viewFlag .close-order,
+.viewOrder .close-oder{
   text-align:right;
 }
 
-.viewFlag .close-order i {
+.viewFlag .close-order i,
+.viewOrder .close-order i {
   color: var(--primary-color);
   cursor: pointer;
 }
@@ -383,7 +385,7 @@ h1, h2, h3, h4, h5, h6 {
 .order-form{
   width:40%;
   margin:auto;
-  background:white;
+  background: #fff;
   padding:15px;
   margin-top:5%;
 }

@@ -100,3 +100,27 @@ const flagAD = (event) => {
       clearTimeout()
   })();
   }
+
+  // Function Buy A Car
+  const orderCar = (event) => {
+    const theTarget = event.target;
+    const parentDiv = theTarget.parentNode.parentNode.parentNode.id;
+    const price = document.querySelector('#' + parentDiv + ' ' + '.price').innerHTML;
+    const form = document.querySelector('.viewOrder').classList.add('viewForm')
+    const formPrice = document.querySelector('.viewOrder #price').value = price;
+    }
+
+  // Function to close order modal
+  function closeOrder(){
+    
+    document.querySelector('.viewOrder').classList.add('close-modal');
+  
+    setTimeout(()=>{
+        document.querySelector('.viewOrder').classList.remove('viewForm');
+        document.querySelector('.viewOrder').classList.remove('close-modal');
+    },1500)
+
+    (function remInterval(){
+    clearTimeout()
+})();    
+}
