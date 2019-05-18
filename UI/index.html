@@ -20,21 +20,21 @@
 <body>
   <!-- Navigation bar-->
   <nav id="main-nav">
-      <div class="container">
-        <img src="img/logo.png" alt="AutoMart" class="logo">
-        <div class="social">
-          <a href="http://facebook.com" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
-          <a href="http://twitter.com" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
-          <a href="http://instagram.com" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
-          <a href="http://youtube.com" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
-        </div>
-        <ul>
-          <li><a class="current" href="index.html">Home</a></li>
-          <li><a href="register.html">Register</a></li>
-          <li><a href="login.html">Login</a></li>
-        </ul>
+    <div class="container">
+      <img src="img/logo.png" alt="AutoMart" class="logo">
+      <div class="social">
+        <a href="http://facebook.com" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+        <a href="http://twitter.com" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+        <a href="http://instagram.com" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+        <a href="http://youtube.com" target="_blank"><i class="fab fa-youtube fa-2x"></i></a>
       </div>
-    </nav>
+      <ul>
+        <li><a class="current" href="index.html">Home</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </div>
+  </nav>
 
   <!-- Showcase -->
   <div id="showcase">
@@ -113,7 +113,7 @@
             <hr>
             <p class="price">&#8358 3,500,000.10</p>
             <div class="f-edit">
-              <button class="btn btn-primary">View Details</button>
+              <button onclick="viewDetail(event)" class="btn btn-primary">View Details</button>
               <button class="btn btn-primary">Buy Now</button>
             </div>
           </div>
@@ -131,7 +131,7 @@
             <hr>
             <p class="price">&#8358 6,000,000</p>
             <div class="f-edit">
-              <button class="btn btn-primary">View Details</button>
+              <button onclick="viewDetail(event)" class="btn btn-primary">View Details</button>
               <button class="btn btn-primary">Buy Now</button>
             </div>
           </div>
@@ -149,7 +149,7 @@
             <hr>
             <p class="price">&#8358 4,500,200.90</p>
             <div class="f-edit">
-              <button class="btn btn-primary">View Details</button>
+              <button onclick="viewDetail(event)" class="btn btn-primary">View Details</button>
               <button class="btn btn-primary">Buy Now</button>
             </div>
           </div>
@@ -167,17 +167,47 @@
             <hr>
             <p class="price">&#8358 3,509,000.45</p>
             <div class="f-edit">
-              <button class="btn btn-primary">View Details</button>
+              <button onclick="viewDetail(event)" class="btn btn-primary">View Details</button>
               <button class="btn btn-primary">Buy Now</button>
             </div>
           </div>
         </article>
       </div>
       <div class="load-more">
-          <button class="btn btn-primary">Load More Cars</button>
+        <button class="btn btn-primary">Load More Cars</button>
       </div>
     </div>
   </section>
+
+  <!-- Modal: View Car Details -->
+  <div class="viewDform hidden-field">
+    <div class="car-item detail" id="car-item">
+      <h1 class="text-center">Vehicle Details</h1>
+        <div>
+          <img src="" class="f-img" />
+        </div>
+        <span class="model-span"><strong>Model:</strong>
+          <p class='model'></p>
+        </span>
+        <span class="car-state"><strong>State:</strong>
+          <p class='carState'></p>
+        </span>
+        <span class="man-span"><strong>Manufacturer:</strong>
+          <p class='manufacturer'></p>
+        </span>
+        <span class="body-span"><strong>Body Type:</strong>
+          <p class='bodyType'>Body Type: </p>
+        </span>
+        <hr>
+        <span class="price-span"><strong>Price:</strong>
+          <p class="price"></p>
+        </span>
+        <div class="f-edit">
+          <button onclick='flagAD(event)' class="btn btn-primary">Flag</button>
+          <button onclick='closeAD(event)' class="btn btn-primary">Close</button>
+        </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer id="main-footer" class="py-2">
@@ -215,6 +245,7 @@
       </div>
     </div>
   </footer>
+  <script src="./js/index.js"></script>
 </body>
 
 </html>

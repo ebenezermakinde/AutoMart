@@ -233,6 +233,7 @@ h1, h2, h3, h4, h5, h6 {
   position: sticky;
   top: 0;
   z-index: 2;
+  border-bottom: 1px solid #c72727;
 }
 
 #main-nav .container {
@@ -325,6 +326,103 @@ h1, h2, h3, h4, h5, h6 {
 #featured-cars .container .load-more {
   max-width:10rem; 
   margin: 1rem auto;
+}
+
+/* Modal: Styling*/
+.viewForm{
+  position:fixed;
+  display:block;
+  background:rgba(0,0,0,0.8);
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  width:100%;
+  min-height:100vh;
+  z-index: 5;
+  animation: 1.5s ease-out 0s 1 slideInFromLeft;
+}
+
+@keyframes slideInFromLeft{
+  0% {
+      transform: translateX(-100%)
+
+  }
+  100%{
+      transform:translateX(0)
+  }
+}
+
+.viewForm .detail{
+  margin:auto;
+  width:40%;
+  background: var(--light-color);
+  padding:15px;
+  margin-top:10rem;
+}
+
+.price-span,
+.model-span,
+.man-span,
+.body-span,
+.car-state {
+  display:flex;
+  align-items:center;
+}
+
+.viewDform span p{
+  padding-left: 0.5rem;
+}
+
+.car-item{
+  width:30%;
+  margin:auto;
+  border:1px solid whitesmoke;
+  box-shadow:0 1px 3px 0 rgba(0,0,0,.12), 0 1px 2px 0 rgba(0,0,0,.24);
+  margin-bottom:5%;
+  overflow: hidden;
+  }
+
+  .car-item img{
+    height:200px;
+    width: 100%;
+    transition: transform .9s ease-in, height .9s ease-in; 
+    
+}
+
+.car-item img:hover{
+  transform: scale(1.3);
+}
+
+.f-edit{
+  display:flex;
+  justify-content: flex-end;
+}
+
+.f-edit button{
+  margin: 0 0.5rem;
+}
+
+.close-modal{
+  position:fixed;
+  background:rgba(0,0,0,0.8);
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  min-height:100vh;
+  animation: 1.5s ease-out 0s 1 slideOff;
+  width: 100%;
+}
+
+@keyframes slideOff{
+  0% {
+      transform: translateX(0)
+
+  }
+  100%{
+      transform:translateX(-100%)
+  }
 }
 
 /* Register Styling */
