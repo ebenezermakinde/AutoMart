@@ -183,30 +183,50 @@
   <div class="viewDform hidden-field">
     <div class="car-item detail" id="car-item">
       <h1 class="text-center">Vehicle Details</h1>
-        <div>
-          <img src="" class="f-img" />
-        </div>
-        <span class="model-span"><strong>Model:</strong>
-          <p class='model'></p>
-        </span>
-        <span class="car-state"><strong>State:</strong>
-          <p class='carState'></p>
-        </span>
-        <span class="man-span"><strong>Manufacturer:</strong>
-          <p class='manufacturer'></p>
-        </span>
-        <span class="body-span"><strong>Body Type:</strong>
-          <p class='bodyType'>Body Type: </p>
-        </span>
-        <hr>
-        <span class="price-span"><strong>Price:</strong>
-          <p class="price"></p>
-        </span>
-        <div class="f-edit">
-          <button onclick='flagAD(event)' class="btn btn-primary">Flag</button>
-          <button onclick='closeAD(event)' class="btn btn-primary">Close</button>
-        </div>
+      <div>
+        <img src="" class="f-img" />
+      </div>
+      <span class="model-span"><strong>Model:</strong>
+        <p class='model'></p>
+      </span>
+      <span class="car-state"><strong>State:</strong>
+        <p class='carState'></p>
+      </span>
+      <span class="man-span"><strong>Manufacturer:</strong>
+        <p class='manufacturer'></p>
+      </span>
+      <span class="body-span"><strong>Body Type:</strong>
+        <p class='bodyType'>Body Type: </p>
+      </span>
+      <hr>
+      <span class="price-span"><strong>Price:</strong>
+        <p class="price"></p>
+      </span>
+      <div class="f-edit">
+        <button onclick='flagAD(event)' class="btn btn-primary">Flag</button>
+        <button onclick='closeAD(event)' class="btn btn-primary">Close</button>
+      </div>
     </div>
+  </div>
+
+  <!--Modal: Flag Car -->
+  <div class="viewFlag hidden-field">
+    <form class="order-form text-center">
+      <p class="close-order" onclick='closeFlagForm()'><i class="fas fa-times-circle"></i></p>
+      <div>
+        <h1> Flag Car Advert</h1>
+      </div>
+      <div class="field-outer">
+        <input id="reason" type="text" name="reason" placeholder="reason">
+      </div>
+      <div class="textarea-outer">
+        <textarea id="description" type="text" name="description" placeholder="Description"></textarea>
+      </div>
+
+      <div class="field-outer">
+        <button type="submit" class="btn btn-primary btn-block">Flag Advert</button>
+      </div>
+    </form>
   </div>
 
   <!-- Footer -->
