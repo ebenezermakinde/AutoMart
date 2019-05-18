@@ -33,6 +33,13 @@
   margin: 0 0.25rem;
 }
 
+/* Modal: Styling */
+.viewForm .detail{
+  width: 80%;
+  padding: 0.3rem;
+  margin: 2rem auto;
+}
+
 @media(max-width: 600px) {
   #showcase .showcase-container,
   #featured-cars .articles-container,
