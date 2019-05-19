@@ -23,7 +23,8 @@
 
 /* User ADs */
 .post-car .user-container,
-.user-container form .form-pair {
+.user-container form .form-pair,
+#admin-view .ads-wrapper {
   display: grid;
   grid-template-columns: 1fr;
 }

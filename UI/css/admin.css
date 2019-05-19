@@ -1,0 +1,20 @@
+.ads-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-gap: 0.5rem;
+}
+
+.report-cards {
+  background: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+.report-area .dash-icons {
+  margin: 0.5rem 0.3rem;
+}
+
+.sold-posts .card,
+.unsold-posts .card {
+  margin: 1rem 0;
+}
