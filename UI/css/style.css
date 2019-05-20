@@ -10,7 +10,7 @@
 .category {
   --test-color: #f99500;
   --offer-color: #a66bbe;
-  --recent-color: #EF233C;
+  --reject-color: #EF233C;
   --available-color: #43B929;
 }
 
@@ -80,7 +80,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .category-test { background: var(--test-color) }
 .category-offer { background: var(--offer-color) }
-.category-recent { background: var(--recent-color) }
+.category-reject { background: var(--reject-color) }
 .category-available { background: var(--available-color)}
 
 .py-1 { padding: 1.5rem 0}
@@ -219,7 +219,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* User Navbar Styling */
-#user-nav .container {
+.user-nav .container {
   display: grid;
   grid-template-columns: 4fr 5fr 1fr;
   padding: 1rem;
@@ -228,7 +228,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Nav-bar Styling */
 #main-nav,
-#user-nav {
+.user-nav {
   background: #fff;
   position: sticky;
   top: 0;
@@ -244,36 +244,36 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #main-nav .logo,
-#user-nav .logo {
+.user-nav .logo {
   width: 180px;
 }
 
 #main-nav ul,
-#user-nav ul {
+.user-nav ul {
   justify-self: end;
   display: flex;
 }
 
 #main-nav ul li a,
-#user-nav ul li a {
+.user-nav ul li a {
   padding: 0.75rem;
   font-weight: bold;
 }
 
 #main-nav ul li a.current,
-#user-nav ul li a.current {
+.user-nav ul li a.current {
   background: var(--primary-color);
   color: #fff;
 }
 
 #main-nav ul li a:hover,
-#user-nav ul li a:hover {
+.user-nav ul li a:hover {
   background: var(--light-color);
   color: #333;
 }
 
 #main-nav .social,
-#user-nav .social {
+.user-nav .social {
   justify-self: center;
 }
 
@@ -555,25 +555,8 @@ h1, h2, h3, h4, h5, h6 {
 /* Post Car */
 .post-car .user-container {
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: 1fr;
   grid-gap: 1rem;
-}
-
-/* user ads */
-.user-ads{
-  padding: 0.3rem 0.4rem;
-}
-
-.ad-details {
-  border: 1px solid #ddd;
-  padding: 0.2rem 0.5rem;
-  margin: 0.5rem 0;
-  border-radius: 1rem;
-}
-
-.user-ads .ad-details .ad-items {
-  display:flex; 
-  justify-content: space-between;
 }
 
 .price-content {
