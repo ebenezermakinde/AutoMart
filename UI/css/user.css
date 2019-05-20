@@ -1,0 +1,18 @@
+/* user ads */
+.user-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 1rem;
+}
+
+.user-posts .user-ads .ad-details .ad-items,
+.card .offer-action,
+.card .ads-edit {
+  display:flex; 
+  justify-content: space-between;
+}
+
+.user-ad-details .card,
+.ads-area .card {
+  margin: 0.5rem 0;
+}
