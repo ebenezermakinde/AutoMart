@@ -4,12 +4,15 @@
   "description": "AutoMart is an auto dealership/sales application",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha src/tests/*.test.js --require @babel/register --exit",
     "start:dev": "nodemon --exec babel-node src/app.js",
     "prebuild": "rm -rf build && mkdir build",
     "build:babel": "babel --out-dir build --ignore *.test.js src",
     "build": "npm run prebuild && npm run build:babel",
-    "start": "npm run build && node ./build/app.js"
+    "start": "npm run build && node ./build/app.js",
+    "generate-lcov": "nyc report --reporter=text-lcov > lcov.info",
+    "report-html": "nyc npm test && nyc report --reporter=html --reporter=lcov",
+    "coverage": "nyc npm test && npm run generate-lcov"
   },
   "repository": {
     "type": "git",
@@ -57,7 +60,6 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.3",
     "istanbul": "^0.4.5",
-    "istanbul-coveralls": "^1.0.3",
     "mocha": "^6.1.4",
     "mocha-lcov-reporter": "^1.3.0",
     "nodemon": "^1.19.1",
