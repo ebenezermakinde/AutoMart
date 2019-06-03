@@ -66,6 +66,31 @@ class userValidator {
     req.body.address = address.trim().toLowerCase();
     return next();
   }
+
+  /**
+   * @param {object} req - The request object
+   * @param {object} res - The response object
+   * @param {function} next - Calls the next function
+   * @returns {object} JSON representing the failure message
+   */
+  static loginValidator(req, res, next) {
+    const { email, password } = req.body;
+    const rules = {
+      email: 'required',
+      password: 'required',
+    };
+
+    const validation = new Validator(req.body, rules);
+    if (validation.fails()) {
+      return res.status(constants.STATUS_BAD_REQUEST).json({
+        status: constants.STATUS_BAD_REQUEST,
+        error: _.mapValues(validation.errors.all(), value => _.toString(value)),
+      });
+    }
+    req.body.email = email;
+    req.body.password = password;
+    return next();
+  }
 }
 
-export const { emailCheck, signUpValidator } = userValidator;
+export const { emailCheck, signUpValidator, loginValidator } = userValidator;

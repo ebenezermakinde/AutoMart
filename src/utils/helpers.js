@@ -55,7 +55,18 @@ class Helpers {
   static hashPassword(password) {
     return bcrypt.hashSync(password, bcrypt.genSaltSync(10));
   }
+
+  /**
+   * Function: Compared the hashed password and plain password provided
+   * @param {string} password - user password
+   * @param {string} hashPassword - hashed password.
+   * @return {string} token - The user token as generated.
+   */
+  static comparePassword(password, hashPassword) {
+    const result = bcrypt.compareSync(password, hashPassword);
+    return result;
+  }
 }
 export const {
-  createUserToken, hashPassword, emailExist, allEmails,
+  createUserToken, hashPassword, emailExist, allEmails, comparePassword,
 } = Helpers;

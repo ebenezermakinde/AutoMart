@@ -30,3 +30,28 @@ export const badSignUpDetails = [
     password_confirmation: '',
   },
 ];
+
+export const goodLoginDetails = [
+  {
+    email: 'obeyboy@yahmail.com',
+    password: '12345678',
+  },
+];
+
+export const badLoginDetails = [
+  // Unregistered User =====>[0]
+  {
+    email: 'obey@unregistered.com',
+    password: '12345678',
+  },
+  // Wrong Password User =====>[1]
+  {
+    email: 'obeyboy@yahmail.com',
+    password: '1234567',
+  },
+  // empty email provided =====>[2]
+  {
+    email: '',
+    password: '1234567',
+  },
+];
