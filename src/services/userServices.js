@@ -1,6 +1,6 @@
 import database from '../dummyData/database';
 import User from '../model/user';
-import { createUserToken, hashPassword } from '../utils/helpers';
+import { createUserToken, hashPassword, comparePassword } from '../utils/helpers';
 import constants from '../utils/constants';
 
 const { users } = database;
@@ -31,6 +31,33 @@ export default class UserServices {
     user.address = address;
 
     users.push(user);
+    return this.getJsonWebToken(user);
+  }
+
+  /**
+   * User login function
+   * @param {string} email - The email of the user
+   * @param {string} password - The user password
+   * @returns {object} JSON - representing the user object
+   */
+  static login({ email, password }) {
+    const user = users.find(data => data.email === email);
+
+    if (!user) {
+      return {
+        status: constants.STATUS_FORBIDDEN,
+        error: constants.MESSAGE_INVALID_LOGIN,
+      };
+    }
+
+    const validPassword = comparePassword(password, user.password);
+
+    if (!validPassword) {
+      return {
+        status: constants.STATUS_FORBIDDEN,
+        error: constants.MESSAGE_INVALID_LOGIN,
+      };
+    }
     return this.getJsonWebToken(user);
   }
 

@@ -1,7 +1,9 @@
 import chai from 'chai';
 import chaiHttp from 'chai-http';
 import app from '../app';
-import { goodSignUpDetail, badSignUpDetails } from './mockData/userMockData';
+import {
+  goodSignUpDetail, goodLoginDetails, badLoginDetails, badSignUpDetails,
+} from './mockData/userMockData';
 import constants from '../utils/constants';
 
 const { should, expect } = chai;
@@ -78,6 +80,80 @@ describe('User test', () => {
             .equal(constants.MESSAGE_PASSWORD_CONFIRM_REQUIRED);
           done();
         });
+    });
+  });
+
+  describe('Login a user', () => {
+    describe('User already signed up', () => {
+      it('should return status code 200 and login the user', (done) => {
+        chai
+          .request(app)
+          .post(`${apiURL}/auth/signin`)
+          .send(goodLoginDetails[0])
+          .end((err, res) => {
+            res.should.have.status(200);
+            res.body.should.be.a('object');
+            res.body.should.have.property('status');
+            res.body.should.have.property('data');
+            expect(res.body.data).to.be.a('object');
+            expect(res.body.data).to.have.property('token');
+            done();
+          });
+      });
+    });
+
+    describe('User not signed up', () => {
+      it('should return status code 403 and send an error message', (done) => {
+        chai
+          .request(app)
+          .post(`${apiURL}/auth/signin`)
+          .send(badLoginDetails[0])
+          .end((err, res) => {
+            res.should.have.status(403);
+            res.body.should.be.a('object');
+            res.body.should.have.property('status');
+            res.body.should.have.property('error');
+            expect(res.body.status).to.equal(403);
+            expect(res.body.error).to.equal(constants.MESSAGE_INVALID_LOGIN);
+            done();
+          });
+      });
+    });
+    describe('Signed up user providing empty email', () => {
+      it('should return status code 400 and send an error message', (done) => {
+        chai
+          .request(app)
+          .post(`${apiURL}/auth/signin`)
+          .send(badLoginDetails[2])
+          .end((err, res) => {
+            res.should.have.status(400);
+            res.body.should.be.a('object');
+            res.body.error.should.be.a('object');
+            res.body.should.have.property('status');
+            res.body.should.have.property('error');
+            res.body.error.should.have.property('email');
+            expect(res.body.status).to.equal(400);
+            expect(res.body.error.email).to.equal(constants.MESSAGE_EMAIL_REQUIRED);
+            done();
+          });
+      });
+    });
+    describe('Signed up user providing wrong password', () => {
+      it('should return status code 403 and send an error message', (done) => {
+        chai
+          .request(app)
+          .post(`${apiURL}/auth/signin`)
+          .send(badLoginDetails[1])
+          .end((err, res) => {
+            res.should.have.status(403);
+            res.body.should.be.a('object');
+            res.body.should.have.property('status');
+            res.body.should.have.property('error');
+            expect(res.body.status).to.equal(403);
+            expect(res.body.error).to.equal(constants.MESSAGE_INVALID_LOGIN);
+            done();
+          });
+      });
     });
   });
 });
