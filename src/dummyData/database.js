@@ -1,0 +1,81 @@
+const database = {
+  users: [
+    {
+      id: 1,
+      firstName: 'obey',
+      lastName: 'mankind',
+      email: 'obeymankind@naija.com',
+      password: '123456789',
+      isAdmin: true,
+      createdAt: '2019-05-22',
+      updatedAt: '2019-05-22',
+    },
+    {
+      id: 2,
+      firstName: 'mary',
+      lastName: 'amaka',
+      email: 'maryamaka@naija.com',
+      password: '123456789',
+      isAdmin: false,
+      createdAt: '2019-05-22',
+      updatedAt: '2019-05-22',
+    },
+  ],
+  cars: [
+    {
+      id: 1,
+      owner: 1,
+      createdOn: '2019-05-22',
+      state: 'new',
+      status: 'sold',
+      price: 1350000.20,
+      manufacturer: 'audi',
+      model: 'A4',
+      bodyType: 'car',
+      transmission: 'automatic',
+    },
+    {
+      id: 2,
+      owner: 2,
+      createdOn: '2019-05-22',
+      state: 'new',
+      status: 'sold',
+      price: 2350000.20,
+      manufacturer: 'land rover',
+      model: 'range sport',
+      bodyType: 'suv',
+      transmission: 'automatic',
+    },
+  ],
+  orders: [
+    {
+      id: 1,
+      buyer: 1,
+      carId: 2,
+      createdOn: '2019-05-22',
+      status: 'pending',
+      price: 1900000,
+      priceOffered: 1500000,
+    },
+    {
+      id: 2,
+      buyer: 2,
+      carId: 1,
+      createdOn: '2019-05-22',
+      status: 'pending',
+      price: 1000000,
+      priceOffered: 1500000,
+    },
+  ],
+  flags: [
+    {
+      id: 1,
+      carId: 2,
+      createdOn: '2019-05-22',
+      reason: 'Fake',
+      description: 'This is a fraudulent post',
+    },
+  ],
+};
+
+export default database;
