@@ -1,12 +1,15 @@
 import express from 'express';
-import carController from '../controller/carController';
-import carValidator from '../middleware/carValidator';
+import CarController from '../controller/carController';
+import CarValidator from '../middleware/carValidator';
+import ValidationHelper from '../middleware/validationHelper';
 
 const carRoute = express.Router();
 
-const { createCar } = carController;
-const { validateCar } = carValidator;
+const { createCar, getACar } = CarController;
+const { validateCar } = CarValidator;
+const { validateID } = ValidationHelper;
 
 carRoute.post('/car', validateCar, createCar);
+carRoute.get('/car/:id', validateID, getACar);
 
 export default carRoute;
