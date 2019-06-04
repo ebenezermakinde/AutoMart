@@ -23,6 +23,11 @@ const constants = {
   MESSAGE_PASSWORD_REQUIRED: 'The password field is required.',
   MESSAGE_PASSWORD_CONFIRM_REQUIRED: 'The password confirmation field is required.',
   MESSAGE_EMAIL_REQUIRED: 'The email field is required.',
+
+  // MESSAGES FOR CAR
+  MESSAGE_NO_CAR: 'The requested car was not found',
+  MESSAGE_STATE_OPTIONS: 'The valid options are either New or Old',
+  MESSAGE_TRANSMISSION_OPTIONS: 'The valid options are Automatic, Manual or Other',
 };
 
 export default constants;

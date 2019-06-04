@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/ebenezermakinde/AutoMart.svg?branch=develop)](https://travis-ci.org/ebenezermakinde/AutoMart)
+[![Coverage Status](https://coveralls.io/repos/github/ebenezermakinde/AutoMart/badge.svg?branch=develop)](https://coveralls.io/github/ebenezermakinde/AutoMart?branch=develop)
 # :star: AutoMart :red_car: :minibus:
 
 ## Project Overview
