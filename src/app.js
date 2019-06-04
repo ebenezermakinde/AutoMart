@@ -3,7 +3,8 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import morgan from 'morgan';
 import logger from './config/winston';
-import userRoute from './routes/user';
+import routes from './routes/index';
+import constants from './utils/constants';
 
 // Define our app port.
 const port = process.env.PORT || 3500;
@@ -21,7 +22,28 @@ const apiURL = '/api/v1';
 global.apiURL = apiURL;
 
 // Use our routes
-app.use(`${apiURL}`, userRoute);
+app.use('/', (req, res, next) => {
+  if (req.originalUrl !== '/') {
+    next();
+    return;
+  }
+  res.status(constants.STATUS_OK).json({
+    status: constants.STATUS_OK,
+    message: 'Welcome to AutoMart',
+  });
+});
+
+Object.keys(routes).forEach((key) => {
+  const value = routes[key];
+  app.use(`${apiURL}/`, value);
+});
+
+app.use((req, res) => {
+  res.status(constants.STATUS_NOT_FOUND).json({
+    status: constants.STATUS_NOT_FOUND,
+    error: constants.MESSAGE_NOT_FOUND,
+  });
+});
 
 // Set up listening.
 app.listen(port, () => {
