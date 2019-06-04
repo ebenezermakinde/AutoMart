@@ -1,13 +1,15 @@
 import database from '../dummyData/database';
 import Car from '../model/car';
-import constants from "../utils/constants";
+import constants from '../utils/constants';
+import common from '../utils/common';
 
 const { cars } = database;
+const { error } = common;
 
 /**
  * CarServices Class
  */
-export default class CarServices {
+class CarServices {
   /**
    * Function: Create A car.
    * @param {string} manufacturer -  manufacturer name.
@@ -41,4 +43,19 @@ export default class CarServices {
 
     return car;
   }
+
+  /**
+   * Function: Get a car by ID
+   * @param {number} id - The carId
+   * @returns {object} JSON - The car object
+   */
+  static getACar(id) {
+    const car = cars.find(data => data.id === Number(id));
+    if (!car) {
+      return error(constants.STATUS_NOT_FOUND, constants.MESSAGE_NO_CAR);
+    }
+    return car;
+  }
 }
+
+export default CarServices;

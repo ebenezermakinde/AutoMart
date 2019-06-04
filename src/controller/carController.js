@@ -1,8 +1,8 @@
-import carServices from '../services/carServices';
+import CarServices from '../services/carServices';
 import constants from '../utils/constants';
 import common from '../utils/common';
 
-const { createCar } = carServices;
+const { createCar, getACar } = CarServices;
 const { success } = common;
 
 /**
@@ -21,6 +21,18 @@ class CarController {
 
     success(res, constants.STATUS_CREATED, createCar(data));
   }
-}
 
+  /**
+   * Function: To return a specific car
+   * @param {object} req - The request object
+   * @param {object} res  - The response object
+   * @returns {object} JSON - The specific car chosen.
+   */
+  static getACar(req, res) {
+    const { id } = req.params;
+    const response = getACar(id);
+
+    success(res, constants.STATUS_OK, createCar(response));
+  }
+}
 export default CarController;
