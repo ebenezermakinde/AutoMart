@@ -1,6 +1,6 @@
 engines:
   duplication:
-    enabled: false
+    enabled: true
     config:
       languages:
         -javascript
@@ -8,7 +8,7 @@ engines:
     enabled: true
     checks:
       similar-code:
-        enabled: false
+        enabled: true
 exclude_sparherns:
 - "node_modules/"
 - ".nyc_output"

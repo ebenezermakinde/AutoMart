@@ -144,3 +144,47 @@ describe('Get all cars', () => {
       });
   });
 });
+
+describe('DELETE a car', () => {
+  it('should remove a car and display a success message', (done) => {
+    chai
+      .request(app)
+      .delete(`${apiURL}/car/3`)
+      .end((err, res) => {
+        res.should.have.status(200);
+        res.body.should.be.a('object');
+        res.body.should.have.property('status');
+        res.body.should.have.property('data');
+        expect(res.body.status).to.equal(200);
+        expect(res.body.data).to.be.a('object');
+        expect(res.body.data).to.have.property('message');
+        expect(res.body.data).to.have.property('car');
+        expect(res.body.data.message).to.equal(constants.MESSAGE_DELETED_CAR);
+        expect(res.body.data.car).to.have.property('id');
+        expect(res.body.data.car).to.have.property('owner');
+        expect(res.body.data.car).to.have.property('createdOn');
+        expect(res.body.data.car).to.have.property('state');
+        expect(res.body.data.car).to.have.property('status');
+        expect(res.body.data.car).to.have.property('price');
+        expect(res.body.data.car).to.have.property('manufacturer');
+        expect(res.body.data.car).to.have.property('model');
+        expect(res.body.data.car).to.have.property('bodyType');
+        expect(res.body.data.car).to.have.property('transmission');
+        done();
+      });
+  });
+  it('should display an error 404 message if can is not available', (done) => {
+    chai
+      .request(app)
+      .delete(`${apiURL}/car/190`)
+      .end((err, res) => {
+        res.should.have.status(404);
+        res.body.should.be.a('object');
+        res.body.should.have.property('status');
+        res.body.should.have.property('error');
+        expect(res.body.status).to.equal(404);
+        expect(res.body.error).to.be.equal(constants.MESSAGE_NO_CAR);
+        done();
+      });
+  });
+});

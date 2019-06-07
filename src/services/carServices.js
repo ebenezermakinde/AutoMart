@@ -59,8 +59,18 @@ class CarServices {
    * @param {number} id - The carId
    * @returns {object} JSON - The car object
    */
-  static getACar(id) {
+  static carFinder(id) {
     const car = cars.find(data => data.id === Number(id));
+    return car;
+  }
+
+  /**
+   * Function: Get a car by ID
+   * @param {number} id - The carId
+   * @returns {object} JSON - The car object
+   */
+  static getACar(id) {
+    const car = this.carFinder(id);
     if (!car) {
       return {
         status: constants.STATUS_NOT_FOUND,
@@ -69,6 +79,29 @@ class CarServices {
     }
     return car;
   }
-}
 
+  /**
+   * Function: Delete - A car.
+   * @param {string} id - The id of the car
+   * @returns {string} message - on succeddful delete.
+   */
+  static removeACar(id) {
+    const car = this.carFinder(id);
+    if (!car) {
+      return {
+        status: constants.STATUS_NOT_FOUND,
+        error: constants.MESSAGE_NO_CAR,
+      };
+    }
+    const carIndex = cars.indexOf(cars);
+    cars.splice(carIndex, 1);
+    return {
+      status: constants.STATUS_OK,
+      data: {
+        message: constants.MESSAGE_DELETED_CAR,
+        car, // So, the user can see what just got deleted.
+      },
+    };
+  }
+}
 export default CarServices;
