@@ -1,10 +1,8 @@
 import database from '../dummyData/database';
 import Car from '../model/car';
 import constants from '../utils/constants';
-import common from '../utils/common';
 
 const { cars } = database;
-const { error } = common;
 
 /**
  * CarServices Class
@@ -45,6 +43,18 @@ class CarServices {
   }
 
   /**
+  * Function - To get all cars based on some criterium
+  * @param {object} data - The data object
+  * @returns {object} JSON - The result of the query.
+  */
+  static getAllCars() {
+    return {
+      status: constants.STATUS_OK,
+      data: cars,
+    };
+  }
+
+  /**
    * Function: Get a car by ID
    * @param {number} id - The carId
    * @returns {object} JSON - The car object
@@ -52,7 +62,10 @@ class CarServices {
   static getACar(id) {
     const car = cars.find(data => data.id === Number(id));
     if (!car) {
-      return error(constants.STATUS_NOT_FOUND, constants.MESSAGE_NO_CAR);
+      return {
+        status: constants.STATUS_NOT_FOUND,
+        error: constants.MESSAGE_NO_CAR,
+      };
     }
     return car;
   }

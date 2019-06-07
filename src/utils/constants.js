@@ -26,8 +26,13 @@ const constants = {
 
   // MESSAGES FOR CAR
   MESSAGE_NO_CAR: 'The requested car was not found',
-  MESSAGE_STATE_OPTIONS: 'The valid options are either New or Old',
-  MESSAGE_TRANSMISSION_OPTIONS: 'The valid options are Automatic, Manual or Other',
+  MESSAGE_STATE_OPTIONS: 'The valid options are either New, new, NEW or Old, old, OLD',
+  MESSAGE_TRANSMISSION_OPTIONS: 'The valid options are Automatic, automatic, AUTOMATIC, Manual, manual, MANUAL or Other, other, OTHER',
+
+  // MESSAGES FOR VALIDATION HELPERS
+  MESSAGE_INVALID_ID: 'The ID has to be numbers only',
+  MESSAGE_STATUS_TYPES: 'Valid options are sold, Sold, available or Available',
+  MESSAGE_PRICE_NOTIF: 'The price must be a number',
 };
 
 export default constants;
