@@ -25,10 +25,10 @@ class CarValidator {
     const rules = {
       manufacturer: 'required|min:3|string',
       model: 'required|min:2|string',
-      state: 'required|in:New,Old',
+      state: 'required|in:New,Old,NEW,OLD,new,old',
       price: 'required|numeric',
       bodyType: 'required|string|min:3',
-      transmission: 'required|in:Automatic,Manual,Other',
+      transmission: 'required|in:automatic,manual,other,Automatic,Manual,Other,AUTOMATIC,MANUAL,OTHER',
     };
 
     const validation = new Validator(req.body, rules,

@@ -4,15 +4,14 @@
   "description": "AutoMart is an auto dealership/sales application",
   "main": "app.js",
   "scripts": {
-    "test": "mocha src/tests/*.test.js --require @babel/register --exit",
+    "test": "nyc --reporter=html --reporter=text mocha src/tests/*.test.js --require @babel/register --exit",
     "start:dev": "nodemon --exec babel-node src/app.js",
     "prebuild": "rm -rf build && mkdir build",
     "build:babel": "babel --out-dir build --ignore *.test.js src",
     "build": "npm run prebuild && npm run build:babel",
     "start": "npm run build && node ./build/app.js",
-    "generate-lcov": "nyc report --reporter=text-lcov > lcov.info",
-    "report-html": "nyc npm test && nyc report --reporter=html --reporter=lcov",
-    "coverage": "nyc npm test && npm run generate-lcov"
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "coveralls": "nyc --reporter=lcov --reporter=text-lcov npm test"
   },
   "repository": {
     "type": "git",
