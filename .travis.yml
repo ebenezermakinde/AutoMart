@@ -6,10 +6,19 @@ notifications:
 cache:
   directories:
     - node_modules
+env:
+  global:
+    - CC_TEST_REPORTER_ID=cfa8e136666ec719fcbe5e1189558fbf7c53715a7e7239e06c84aad0cd44de58
 before_script:
   - npm install
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 script:
   - npm test
+  - bundle exec rspec
 after_success:
   - npm run coverage
   - npm run coveralls
