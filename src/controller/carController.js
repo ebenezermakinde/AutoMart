@@ -63,8 +63,25 @@ class CarController {
     }
     return res.status(constants.STATUS_OK).send(response);
   }
+
+  /**
+   * Function: To update a specific car price
+   * @param {object} req - The request object
+   * @param {object} res  - The response object
+   * @returns {object} JSON - The update car object.
+   */
+  static updatePrice(req, res) {
+    const { id } = req.params;
+    const { price } = req.body;
+    const response = CarServices.patchPrice(id, price);
+
+    if (response.status === constants.STATUS_NOT_FOUND) {
+      return res.status(constants.STATUS_NOT_FOUND).send(response);
+    }
+    return res.status(constants.STATUS_OK).send(response);
+  }
 }
 
 export const {
-  createACar, fetchACar, fetchAllCars, deleteACar,
+  createACar, fetchACar, fetchAllCars, deleteACar, updatePrice,
 } = CarController;

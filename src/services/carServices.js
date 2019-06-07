@@ -103,5 +103,26 @@ class CarServices {
       },
     };
   }
+
+  /**
+   * Function: update price of - A car.
+   * @param {string} id - The id of the car
+   * @param {number} price - The price of the car
+   * @returns {object} JSON - The updated car object
+   */
+  static patchPrice(id, price) {
+    const car = this.carFinder(id);
+    if (!car) {
+      return {
+        status: constants.STATUS_NOT_FOUND,
+        error: constants.MESSAGE_NO_CAR,
+      };
+    }
+    car.price = price;
+    return {
+      status: constants.STATUS_OK,
+      data: car,
+    };
+  }
 }
 export default CarServices;

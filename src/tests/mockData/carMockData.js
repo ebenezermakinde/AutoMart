@@ -31,3 +31,9 @@ export const badCarDetails = [
     state: 'Old',
   },
 ];
+
+export const updatePrice = [
+  {
+    price: 12450.90,
+  },
+];
