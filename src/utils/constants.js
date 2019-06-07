@@ -28,6 +28,7 @@ const constants = {
   MESSAGE_NO_CAR: 'The requested car was not found',
   MESSAGE_STATE_OPTIONS: 'The valid options are either New, new, NEW or Old, old, OLD',
   MESSAGE_TRANSMISSION_OPTIONS: 'The valid options are Automatic, automatic, AUTOMATIC, Manual, manual, MANUAL or Other, other, OTHER',
+  MESSAGE_DELETED_CAR: 'Car Ad successfully deleted',
 
   // MESSAGES FOR VALIDATION HELPERS
   MESSAGE_INVALID_ID: 'The ID has to be numbers only',
